@@ -95,7 +95,7 @@ class TicketsController extends AbstractController
 
         return $this->render('tickets/show.html.twig', [
             'ticket' => $ticket,
-            'messages' => $messageRepository->findAll(),
+            'messages' => $messageRepository->findBy(['ticket'=> $ticket->getId()]),
             'form' => $form->createView()
 
 
